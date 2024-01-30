@@ -1,28 +1,106 @@
+* {
+    --base-color: #E2E8F0;
+    --custom-blue: #1992d4;
+    --test-border-1: 1px solid black;
+
+}
+
 .container {
     display: grid;
     grid-template-columns: 1fr 4fr;
-    border: 1px solid black;
-    gap: 5px;
+    background-color: var(--base-color);
+    border: var(--test-border-1);
 }
+svg {
+    height: 1.5em;
+    width: 1.5em;
+}
+
 header {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
-    border: 1px solid green;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
 }
 header > div {
-    border: 1px solid blue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
+.search-form {
+    flex: 1;
+    padding-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+}
+.search-form > input {
+    flex: 1;
+    border-radius: 10px;
+    border: 1px;
+    background-color: var(--base-color);
+}
+.bell {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin: 16px 32px 16px 32px;
+}
+#welcome {
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    flex: 1;
+}
+#welcome svg {
+    height: 3em;
+    width: 3em;
+}
+#welcome p {
+    margin: 5px;
+}
+#actions button {
+    color: white;
+    background-color: var(--custom-blue);
+    border: none;
+    border-radius: 16px;
+    height: 30px;
+    width: 75px;
+    margin: 16px;
+}
+
 .sidebar {
-    background-color: #1992d4;
+    background-color: var(--custom-blue);
     color: white;
     grid-row: 1 / 3;
     grid-column: 1 / 2;
-    border: 1px solid black;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+}
+.sidebar > h1 {
+    display: flex;
+    align-items: center;
+    margin: 0 0 0 10px;
+}
+.sidebar > div {
+    padding-bottom: 20px;
+}
+.sidebar-inner a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    margin-left: 16px;
+}
+.sidebar svg {
+    margin-right: 16px;
+    fill: white;
 }
 
 .content {
     grid-column: 2 / 3;
-    border: 1px solid black;
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -38,27 +116,54 @@ header > div {
     grid-row: 1 / 3;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
 }
 
 .project {
-    width: 200px;
-    height: 100px;
-    border: 1px solid red;
+    border: var(--test-border-1);
+    background-color: white;
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.project-text {
+    padding: 10px;
+}
+.project-buttons {
+    display: flex;
+    justify-content: end;
+    margin-right: 8px;
+}
+.project-buttons  svg {
+    padding: 16px;
 }
 
-.announcements {
+.announcements,.trending {
     grid-column-start: 2;
+    background-color: white;
+    height: auto;
+    width: 300px;
+    border-radius: 10px;
+    margin: 20px;
+    
 }
-.announcements > div {
-    border: 1px solid blue;
-    height: 200px;
-    width: 150px;
+.announce {
+    width: 250px;
+    margin: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--base-color);
 }
+.announce:last-child {
+    border: none;
+}
+
 .trending {
     grid-column-start: 2;
 }
-.trending > div {
-    border: 1px solid blue;
-    height: 200px;
-    width: 150px;
+.trend {
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
 }
